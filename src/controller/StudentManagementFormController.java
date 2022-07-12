@@ -98,7 +98,7 @@ public class StudentManagementFormController {
 
     public void addStudentOnAction(ActionEvent actionEvent) {
         if (txtStudentID.getText().isEmpty()){
-            new Alert(Alert.AlertType.ERROR, "Please insert all data !").show();
+            new Alert(Alert.AlertType.ERROR, "Please insert the data into the field !").show();
         }else {
             Student stud = new Student(
                     txtStudentID.getText(), txtStudentName.getText(), txtEmail.getText(), txtContact.getText(), txtAddress.getText(), txtNic.getText()
@@ -123,38 +123,46 @@ public class StudentManagementFormController {
     }
 
     public void updateStudentOnAction(ActionEvent actionEvent) {
-        Student upStud = new Student(
-                txtStudentID.getText(), txtStudentName.getText(), txtEmail.getText(), txtContact.getText(), txtAddress.getText(), txtNic.getText()
-        );
-        try {
-            if (CrudUtil.execute("UPDATE student SET student_name=? , email=? , contact=? , address=? , nic=? WHERE student_id=?",  upStud.getStudent_name(), upStud.getEmail(), upStud.getContact(), upStud.getAddress(), upStud.getNic(), upStud.getStudent_id())) {
-                new Alert(Alert.AlertType.CONFIRMATION, "Details are Updated !").show();
-            }else {
-                new Alert(Alert.AlertType.WARNING, "Didn't Updated !").show();
+        if (txtStudentID.getText().isEmpty()) {
+            new Alert(Alert.AlertType.ERROR, "First select the data you want to update !").show();
+        }else {
+            Student upStud = new Student(
+                    txtStudentID.getText(), txtStudentName.getText(), txtEmail.getText(), txtContact.getText(), txtAddress.getText(), txtNic.getText()
+            );
+            try {
+                if (CrudUtil.execute("UPDATE student SET student_name=? , email=? , contact=? , address=? , nic=? WHERE student_id=?", upStud.getStudent_name(), upStud.getEmail(), upStud.getContact(), upStud.getAddress(), upStud.getNic(), upStud.getStudent_id())) {
+                    new Alert(Alert.AlertType.CONFIRMATION, "Details are Updated !").show();
+                } else {
+                    new Alert(Alert.AlertType.WARNING, "Didn't Updated !").show();
+                }
+            } catch (SQLException | ClassNotFoundException e) {
+                e.printStackTrace();
+                new Alert(Alert.AlertType.ERROR, e.getMessage()).show();
             }
-        } catch (SQLException | ClassNotFoundException e){
-            e.printStackTrace();
-            new Alert(Alert.AlertType.ERROR, e.getMessage()).show();
-        }
 
-        try {
-            loadAllStudents();
-        } catch (ClassNotFoundException | SQLException e){
-            e.printStackTrace();
+            try {
+                loadAllStudents();
+            } catch (ClassNotFoundException | SQLException e) {
+                e.printStackTrace();
+            }
         }
         clearFields();
     }
 
     public void deleteStudentOnAction(ActionEvent actionEvent) {
-        try {
-            if (CrudUtil.execute("DELETE FROM student WHERE student_id=?", txtStudentID.getText())){
-               new Alert(Alert.AlertType.CONFIRMATION, "Deleted..!").show();
-               clearFields();
+        if (txtStudentID.getText().isEmpty()) {
+            new Alert(Alert.AlertType.ERROR, "First select the data you want to delete !").show();
+        }else {
+            try {
+                if (CrudUtil.execute("DELETE FROM student WHERE student_id=?", txtStudentID.getText())) {
+                    new Alert(Alert.AlertType.CONFIRMATION, "Deleted..!").show();
+                    clearFields();
+                }
+            } catch (SQLException throwables) {
+                throwables.printStackTrace();
+            } catch (ClassNotFoundException e) {
+                e.printStackTrace();
             }
-        } catch (SQLException throwables) {
-            throwables.printStackTrace();
-        } catch (ClassNotFoundException e) {
-            e.printStackTrace();
         }
     }
 
