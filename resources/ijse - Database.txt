@@ -81,19 +81,31 @@ INSERT INTO student VALUES
 ('ST005', 'Milan', 'sandeep@gmail.com', '0775234567', 'Colombo', '33448652V');
 
 INSERT INTO teacher VALUES
-('T001', 'Hasika', '99665588V', '0721333666', 'Panadura');
+('T001', 'Hasika', '96665388V', '0721333666', 'Panadura'),
+('T002', 'Niroth', '70658588V', '0721333321', 'Galle'),
+('T003', 'Yasindu', '97612388V', '0721333123', 'Colombo');
 
 INSERT INTO subject VALUES
-('SUB001', 'DBMS', 20,'T001');
+('SUB001', 'DBMS', 20,'T001'),
+('SUB002', 'DBP', 30,'T003'),
+('SUB003', 'OOP', 50,'T002');
 
 INSERT INTO course VALUES
-('CO01', 'GDSE', 300000, '3 Year', 'SUB001');
+('CO01', 'GDSE', 300000, '3 Year', 'SUB001'),
+('CO02', 'CMJD', 300000, '2 Year', 'SUB002'),
+('CO03', 'RMAD', 300000, '1 Year', 'SUB003');
 
 INSERT INTO intake VALUES
-('IN001', '2022-08-12', 'none', 'none', 'CO01');
+('IN001', '2022-08-10', 'none', 'none', 'CO01'),
+('IN002', '2022-08-12', 'none', 'none', 'CO02'),
+('IN003', '2022-08-15', 'none', 'none', 'CO03');
 
 INSERT INTO registration VALUES
-('REG001', '2022-07-25', 'SUB001', 'IN001');
+('REG001', '2022-07-25', 'SUB001', 'IN001'),
+('REG002', '2022-07-26', 'SUB002', 'IN002'),
+('REG003', '2022-07-27', 'SUB003', 'IN003');
 
 INSERT INTO payment VALUES
-('PAY001', '2022-07-25', 40000, 'REG001');
+('PAY001', '2022-07-25', 85000, 'REG001'),
+('PAY002', '2022-07-26', 30000, 'REG002'),
+('PAY003', '2022-07-27', 28000, 'REG003');
