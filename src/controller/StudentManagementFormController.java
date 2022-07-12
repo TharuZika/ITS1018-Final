@@ -163,7 +163,15 @@ public class StudentManagementFormController {
             } catch (ClassNotFoundException e) {
                 e.printStackTrace();
             }
+            try {
+                loadAllStudents();
+            } catch (SQLException throwables) {
+                throwables.printStackTrace();
+            } catch (ClassNotFoundException e) {
+                e.printStackTrace();
+            }
         }
+        clearFields();
     }
 
     public void clearOnAction(ActionEvent actionEvent) {
