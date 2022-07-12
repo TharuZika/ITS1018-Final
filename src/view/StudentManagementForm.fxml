@@ -12,6 +12,51 @@
 
 <AnchorPane prefHeight="673.0" prefWidth="982.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.StudentManagementFormController">
    <children>
+      <AnchorPane layoutX="12.0" layoutY="9.0" prefHeight="655.0" prefWidth="354.0" style="-fx-background-color: #ccebe6; -fx-background-radius: 20;">
+         <children>
+            <JFXTextField labelFloat="true" layoutX="12.0" layoutY="75.0" prefHeight="31.0" prefWidth="330.0" promptText="Student ID" style="-fx-background-color: #62c493; -fx-prompt-text-fill: white;" unFocusColor="#4d4d4d00">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </JFXTextField>
+            <JFXTextField labelFloat="true" layoutX="12.0" layoutY="136.0" prefHeight="31.0" prefWidth="330.0" promptText="Student Name" style="-fx-background-color: #62c493; -fx-prompt-text-fill: white;" unFocusColor="#4d4d4d00">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </JFXTextField>
+            <JFXTextField labelFloat="true" layoutX="12.0" layoutY="244.0" prefHeight="31.0" prefWidth="170.0" promptText="Email" style="-fx-background-color: #62c493; -fx-prompt-text-fill: white;" unFocusColor="#4d4d4d00">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </JFXTextField>
+            <JFXTextField labelFloat="true" layoutX="193.0" layoutY="244.0" prefHeight="31.0" prefWidth="149.0" promptText="Contact" style="-fx-background-color: #62c493; -fx-prompt-text-fill: white;" unFocusColor="#4d4d4d00">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </JFXTextField>
+            <JFXTextField labelFloat="true" layoutX="12.0" layoutY="307.0" prefHeight="31.0" prefWidth="330.0" promptText="Address" style="-fx-background-color: #62c493; -fx-prompt-text-fill: white;" unFocusColor="#4d4d4d00">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </JFXTextField>
+            <JFXTextField labelFloat="true" layoutX="12.0" layoutY="370.0" prefHeight="31.0" prefWidth="330.0" promptText="NIC" style="-fx-background-color: #62c493; -fx-prompt-text-fill: white;" unFocusColor="#4d4d4d00">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </JFXTextField>
+            <Separator layoutX="12.0" layoutY="208.0" prefHeight="2.0" prefWidth="330.0" />
+            <JFXButton layoutX="252.0" layoutY="449.0" prefHeight="37.0" prefWidth="85.0" style="-fx-background-color: lightblue;" text="Add">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font>
+            </JFXButton>
+            <Label layoutX="12.0" layoutY="14.0" text="Student">
+               <font>
+                  <Font name="Impact" size="27.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
       <TableView layoutX="386.0" layoutY="9.0" prefHeight="655.0" prefWidth="588.0">
         <columns>
           <TableColumn prefWidth="75.0" text="Student ID" />
@@ -22,46 +67,5 @@
             <TableColumn prefWidth="105.0" text="NIC" />
         </columns>
       </TableView>
-      <JFXTextField labelFloat="true" layoutX="24.0" layoutY="83.0" prefHeight="31.0" prefWidth="330.0" promptText="Student ID" style="-fx-background-color: lightgreen;" unFocusColor="#4d4d4d00">
-         <font>
-            <Font size="15.0" />
-         </font>
-      </JFXTextField>
-      <JFXTextField labelFloat="true" layoutX="24.0" layoutY="144.0" prefHeight="31.0" prefWidth="330.0" promptText="Student Name" style="-fx-background-color: lightgreen;" unFocusColor="#4d4d4d00">
-         <font>
-            <Font size="15.0" />
-         </font>
-      </JFXTextField>
-      <JFXTextField labelFloat="true" layoutX="24.0" layoutY="252.0" prefHeight="31.0" prefWidth="170.0" promptText="Email" style="-fx-background-color: lightgreen;" unFocusColor="#4d4d4d00">
-         <font>
-            <Font size="15.0" />
-         </font>
-      </JFXTextField>
-      <JFXTextField labelFloat="true" layoutX="205.0" layoutY="252.0" prefHeight="31.0" prefWidth="149.0" promptText="Contact" style="-fx-background-color: lightgreen;" unFocusColor="#4d4d4d00">
-         <font>
-            <Font size="15.0" />
-         </font>
-      </JFXTextField>
-      <JFXTextField labelFloat="true" layoutX="24.0" layoutY="315.0" prefHeight="31.0" prefWidth="330.0" promptText="Address" style="-fx-background-color: lightgreen;" unFocusColor="#4d4d4d00">
-         <font>
-            <Font size="15.0" />
-         </font>
-      </JFXTextField>
-      <JFXTextField labelFloat="true" layoutX="24.0" layoutY="378.0" prefHeight="31.0" prefWidth="330.0" promptText="NIC" style="-fx-background-color: lightgreen;" unFocusColor="#4d4d4d00">
-         <font>
-            <Font size="15.0" />
-         </font>
-      </JFXTextField>
-      <Separator layoutX="24.0" layoutY="216.0" prefHeight="2.0" prefWidth="330.0" />
-      <JFXButton layoutX="264.0" layoutY="457.0" prefHeight="37.0" prefWidth="85.0" style="-fx-background-color: lightblue;" text="Add">
-         <font>
-            <Font name="System Bold" size="16.0" />
-         </font>
-      </JFXButton>
-      <Label layoutX="24.0" layoutY="22.0" text="Student">
-         <font>
-            <Font name="Impact" size="27.0" />
-         </font>
-      </Label>
    </children>
 </AnchorPane>
