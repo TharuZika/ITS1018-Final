@@ -1,10 +1,12 @@
-SHOW databases;
+DROP DATABASE IF EXISTS ijse;
 
 CREATE DATABASE IF NOT EXISTS ijse;
 
+SHOW databases;
+
 USE ijse;
 
-CREATE TABLE IF NOT EXISTS Student (
+CREATE TABLE IF NOT EXISTS student (
     student_id VARCHAR(45),
     student_name VARCHAR(45),
     email TEXT,
@@ -12,27 +14,27 @@ CREATE TABLE IF NOT EXISTS Student (
     address TEXT,
     nic VARCHAR(45),
     CONSTRAINT PRIMARY KEY (student_id)
-    );
+);
 
-CREATE TABLE IF NOT EXISTS Teacher(
+CREATE TABLE IF NOT EXISTS teacher(
     teacher_id VARCHAR(45),
     name VARCHAR(45),
     nic VARCHAR(45),
     contact VARCHAR(45),
     address TEXT,
     CONSTRAINT PRIMARY KEY (teacher_id)
-    );
+);
 
-CREATE TABLE IF NOT EXISTS Subject(
+CREATE TABLE IF NOT EXISTS subject(
     subject_id VARCHAR(45),
     subject_name VARCHAR(45),
     credit DOUBLE,
     teacher_id VARCHAR(45),
     CONSTRAINT PRIMARY KEY (subject_id),
     CONSTRAINT FOREIGN KEY (teacher_id) references Teacher(teacher_id) ON DELETE CASCADE ON UPDATE CASCADE
-    );
+);
 
-CREATE TABLE IF NOT EXISTS Course(
+CREATE TABLE IF NOT EXISTS course(
     course_id VARCHAR(45),
     course_name VARCHAR(45),
     cost DOUBLE,
@@ -52,17 +54,17 @@ CREATE TABLE IF NOT EXISTS intake(
     CONSTRAINT FOREIGN KEY (course_id) references Course(course_id) ON DELETE    CASCADE ON UPDATE CASCADE
 );
 
-CREATE TABLE IF NOT EXISTS Registration(
+CREATE TABLE IF NOT EXISTS registration(
     registration_id VARCHAR(45),
     reg_date DATE,
     subject_id VARCHAR(45),
     intake_id VARCHAR(45),
     CONSTRAINT PRIMARY KEY (registration_id),
     CONSTRAINT FOREIGN KEY (subject_id) references Subject(subject_id) ON DELETE    CASCADE ON UPDATE CASCADE,
-CONSTRAINT FOREIGN KEY (intake_id) references intake(intake_id ) ON DELETE    CASCADE ON UPDATE CASCADE
+    CONSTRAINT FOREIGN KEY (intake_id) references intake(intake_id ) ON DELETE    CASCADE ON UPDATE CASCADE
 );
 
-CREATE TABLE IF NOT EXISTS Payment(
+CREATE TABLE IF NOT EXISTS payment(
     payment_id VARCHAR(45),
     date DATE,
     cost DOUBLE,
@@ -70,3 +72,28 @@ CREATE TABLE IF NOT EXISTS Payment(
     CONSTRAINT PRIMARY KEY (payment_id),
     CONSTRAINT FOREIGN KEY (registration_id ) references Registration(registration_id ) ON DELETE    CASCADE ON UPDATE CASCADE
 );
+
+INSERT INTO student VALUES
+('ST001', 'Amantha', 'amantha@gmail.com', '0781234567', 'Galle', '12345627V'),
+('ST002', 'Saman', 'saman@gmail.com', '0775080969', 'Matara', '33221166V'),
+('ST003', 'Thiwanka', 'kidkav@gmail.com', '0722335689', 'Jaffna', '77885544V'),
+('ST004', 'Sahan', 'sahanj@gmail.com', '0781254667', 'Mahiyanganaya', '66992244V'),
+('ST005', 'Milan', 'sandeep@gmail.com', '0775234567', 'Colombo', '33448652V');
+
+INSERT INTO teacher VALUES
+('T001', 'Hasika', '99665588V', '0721333666', 'Panadura');
+
+INSERT INTO subject VALUES
+('SUB001', 'DBMS', 20,'T001');
+
+INSERT INTO course VALUES
+('CO01', 'GDSE', 300000, '3 Year', 'SUB001');
+
+INSERT INTO intake VALUES
+('IN001', '2022-08-12', 'none', 'none', 'CO01');
+
+INSERT INTO registration VALUES
+('REG001', '2022-07-25', 'SUB001', 'IN001');
+
+INSERT INTO payment VALUES
+('PAY001', '2022-07-25', 40000, 'REG001');
