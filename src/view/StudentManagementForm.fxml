@@ -2,6 +2,7 @@
 
 <?import com.jfoenix.controls.JFXButton?>
 <?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.Separator?>
 <?import javafx.scene.control.TableColumn?>
@@ -14,32 +15,32 @@
    <children>
       <AnchorPane layoutX="12.0" layoutY="9.0" prefHeight="655.0" prefWidth="354.0" style="-fx-background-color: #ccebe6; -fx-background-radius: 20;">
          <children>
-            <JFXTextField fx:id="txtStudentID" labelFloat="true" layoutX="12.0" layoutY="75.0" prefHeight="31.0" prefWidth="330.0" promptText="Student ID" style="-fx-background-color: #62c493; -fx-prompt-text-fill: white;" unFocusColor="#4d4d4d00">
+            <JFXTextField fx:id="txtStudentID" labelFloat="true" layoutX="12.0" layoutY="75.0" prefHeight="31.0" prefWidth="330.0" promptText="Student ID" style="-fx-background-color: #62c493; -fx-prompt-text-fill: grey;" unFocusColor="#4d4d4d00">
                <font>
                   <Font size="15.0" />
                </font>
             </JFXTextField>
-            <JFXTextField fx:id="txtStudentName" labelFloat="true" layoutX="12.0" layoutY="136.0" prefHeight="31.0" prefWidth="330.0" promptText="Student Name" style="-fx-background-color: #62c493; -fx-prompt-text-fill: white;" unFocusColor="#4d4d4d00">
+            <JFXTextField fx:id="txtStudentName" labelFloat="true" layoutX="12.0" layoutY="136.0" prefHeight="31.0" prefWidth="330.0" promptText="Student Name" style="-fx-background-color: #62c493; -fx-prompt-text-fill: grey;" unFocusColor="#4d4d4d00">
                <font>
                   <Font size="15.0" />
                </font>
             </JFXTextField>
-            <JFXTextField fx:id="txtEmail" labelFloat="true" layoutX="12.0" layoutY="244.0" prefHeight="31.0" prefWidth="170.0" promptText="Email" style="-fx-background-color: #62c493; -fx-prompt-text-fill: white;" unFocusColor="#4d4d4d00">
+            <JFXTextField fx:id="txtEmail" labelFloat="true" layoutX="12.0" layoutY="244.0" prefHeight="31.0" prefWidth="170.0" promptText="Email" style="-fx-background-color: #62c493; -fx-prompt-text-fill: grey;" unFocusColor="#4d4d4d00">
                <font>
                   <Font size="15.0" />
                </font>
             </JFXTextField>
-            <JFXTextField fx:id="txtContact" labelFloat="true" layoutX="193.0" layoutY="244.0" prefHeight="31.0" prefWidth="149.0" promptText="Contact" style="-fx-background-color: #62c493; -fx-prompt-text-fill: white;" unFocusColor="#4d4d4d00">
+            <JFXTextField fx:id="txtContact" labelFloat="true" layoutX="193.0" layoutY="244.0" prefHeight="31.0" prefWidth="149.0" promptText="Contact" style="-fx-background-color: #62c493; -fx-prompt-text-fill: grey;" unFocusColor="#4d4d4d00">
                <font>
                   <Font size="15.0" />
                </font>
             </JFXTextField>
-            <JFXTextField fx:id="txtAddress" labelFloat="true" layoutX="12.0" layoutY="307.0" prefHeight="31.0" prefWidth="330.0" promptText="Address" style="-fx-background-color: #62c493; -fx-prompt-text-fill: white;" unFocusColor="#4d4d4d00">
+            <JFXTextField fx:id="txtAddress" labelFloat="true" layoutX="12.0" layoutY="307.0" prefHeight="31.0" prefWidth="330.0" promptText="Address" style="-fx-background-color: #62c493; -fx-prompt-text-fill: grey;" unFocusColor="#4d4d4d00">
                <font>
                   <Font size="15.0" />
                </font>
             </JFXTextField>
-            <JFXTextField fx:id="txtNic" labelFloat="true" layoutX="12.0" layoutY="370.0" prefHeight="31.0" prefWidth="330.0" promptText="NIC" style="-fx-background-color: #62c493; -fx-prompt-text-fill: white;" unFocusColor="#4d4d4d00">
+            <JFXTextField fx:id="txtNic" labelFloat="true" layoutX="12.0" layoutY="370.0" prefHeight="31.0" prefWidth="330.0" promptText="NIC" style="-fx-background-color: #62c493; -fx-prompt-text-fill: grey;" unFocusColor="#4d4d4d00">
                <font>
                   <Font size="15.0" />
                </font>
@@ -49,6 +50,9 @@
                <font>
                   <Font name="System Bold" size="16.0" />
                </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
             </JFXButton>
             <Label layoutX="12.0" layoutY="14.0" text="Student">
                <font>
@@ -59,13 +63,27 @@
                <font>
                   <Font name="System Bold" size="16.0" />
                </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
             </JFXButton>
             <JFXButton layoutX="255.0" layoutY="604.0" onAction="#deleteStudentOnAction" prefHeight="37.0" prefWidth="85.0" style="-fx-background-color: #d6a5a5;" text="Delete">
                <font>
                   <Font name="System Bold" size="16.0" />
                </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
             </JFXButton>
-            <Separator layoutX="12.0" layoutY="443.0" prefHeight="2.0" prefWidth="330.0" />
+            <Separator layoutX="12.0" layoutY="462.0" prefHeight="2.0" prefWidth="330.0" />
+            <JFXButton layoutX="290.0" layoutY="414.0" onAction="#clearOnAction" style="-fx-background-color: grey;" text="Clear" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="13.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </JFXButton>
          </children>
       </AnchorPane>
       <TableView fx:id="tblStudents" layoutX="386.0" layoutY="9.0" prefHeight="655.0" prefWidth="588.0">
