@@ -1,1 +1,59 @@
 CREATE DATABASE IF NOT EXISTS ijse;
+
+SHOW DATABASES;
+
+USE ijse;
+
+CREATE TABLE IF NOT EXISTS student (
+    student_id VARCHAR(45),
+    student_name VARCHAR(45),
+    email TEXT,
+    contact VARCHAR(20),
+    address TEXT,
+    nic VARCHAR(45)
+);
+
+CREATE TABLE IF NOT EXISTS teacher (
+    teacher_id VARCHAR(45),
+    name VARCHAR(45),
+    nic VARCHAR(45),
+    contact VARCHAR(45),
+    address TEXT
+    );
+
+CREATE TABLE IF NOT EXISTS subject (
+  subject_id VARCHAR(45),
+  subject_name VARCHAR(45),
+  credit DOUBLE,
+  teacher_id VARCHAR(45)  
+);
+
+CREATE TABLE IF NOT EXISTS course (
+    course_id VARCHAR(45),
+    course_name VARCHAR(45),
+    cost DOUBLE,
+    duration VARCHAR(45),
+    subject_id VARCHAR(45)
+);
+
+CREATE TABLE IF NOT EXISTS intake (
+    intake_id VARCHAR(45),
+    start_date DATE,
+    intakecol VARCHAR(45),
+    description VARCHAR(45),
+    course_id VARCHAR(45)
+);
+
+CREATE TABLE IF NOT EXISTS registration (
+    registration_id VARCHAR(45),
+    reg_date DATE,
+    student_id VARCHAR(45),
+    intake_id VARCHAR(45)
+);
+
+CREATE TABLE IF NOT EXISTS payment (
+    payment_id VARCHAR(45),
+    date DATE,
+    cost DOUBLE,
+    registration_id VARCHAR(45)
+);
